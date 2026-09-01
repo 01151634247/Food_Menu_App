@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.orange.shade300,
       ),
       body: Padding(
-        padding: const EdgeInsets.only(top: 10),
+        padding: const EdgeInsets.only(top: 10,left:3,right: 3),
         child: Column(
           children: [
             Text('Most loved ',style: text.textStyle18.copyWith(
@@ -65,29 +65,76 @@ class _HomeScreenState extends State<HomeScreen> {
               
                       itemCount: snapshot.data!.recipes!.length,
                       gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(
-                        childAspectRatio: .89,
-                        mainAxisSpacing: 5,
-                        crossAxisSpacing: 5,
+                        childAspectRatio: 0.58,
+                        mainAxisSpacing: 3,
+                        crossAxisSpacing: 3,
                       
                         crossAxisCount: 2),
                       itemBuilder: (context,index){
                         return Card(
                           child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
-                                height: 170,
+                                height: 200,
                                  decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.vertical(top:Radius.circular(12)),
+                                borderRadius: BorderRadius.circular(12),                        
                                   image:DecorationImage(image: NetworkImage('${myRecipes[index].image}'),fit: BoxFit.cover,),
                                   ),
                                   
                                  ),
-                                
+                                const SizedBox(
+                                  height: 4,
+                                ),
                                  Text('${myRecipes[index].name}',
                                  style: text.textStyle18.copyWith(
+                                  color: Colors.blueAccent,
                                   fontWeight: FontWeight.bold
                                  ),
                                  overflow: TextOverflow.ellipsis,),
+                                  const SizedBox(
+                                  height: 4,
+                                ),
+                                 Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                   children: [
+                                     Text('Calories: ',style: text.textStyle18.copyWith(
+                                      color: Colors.black87,
+                                     ),),
+                                     Text('${myRecipes[index].caloriesPerServing}',style: text.textStyle18.copyWith(
+                                      color: Colors.green,
+                                      fontWeight: FontWeight.bold,
+                                     ),),
+                                   ],
+                                 ),
+                                 const SizedBox(
+                                  height: 5,
+                                 ),
+
+                            ///////////////////////////////
+                                 Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    ElevatedButton(
+                                      style: ElevatedButton.styleFrom(
+                                        shape: RoundedRectangleBorder(                                 
+                                          borderRadius: BorderRadiusGeometry.circular(8),
+                                        ),
+                                        backgroundColor: Colors.orange.shade200,
+                                      ),
+                                      onPressed: (){},
+                                     child:Text('View',style: text.textStyle18.copyWith(
+                                      fontWeight: FontWeight.bold
+                                     ),),),
+                                     const SizedBox(
+                                width:12,
+                               ),
+                                      
+                                     Text('${myRecipes[index].cookTimeMinutes}Min',style: text.textStyle18.copyWith(
+                                      fontWeight: FontWeight.bold,
+                                     ),),
+                                  ],
+                                 ),
               
                             ],
                           ),
