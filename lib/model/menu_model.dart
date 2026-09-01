@@ -35,7 +35,7 @@ class Recipes {
   List<String>? tags;
   int? userId;
   String? image;
-  double? rating;
+  dynamic? rating;
   int? reviewCount;
   List<String>? mealType;
 
