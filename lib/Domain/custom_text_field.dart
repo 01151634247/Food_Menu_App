@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-   class Text{
+   class text{
 
    static TextStyle textStyle12 =TextStyle(
     fontWeight: FontWeight.normal,
@@ -22,7 +22,7 @@ import 'package:flutter/material.dart';
     fontWeight: FontWeight.normal,
     color: Colors.black,
     fontFamily: 'primary',
-    fontSize: 15,
+    fontSize: 24,
   );
 
 
