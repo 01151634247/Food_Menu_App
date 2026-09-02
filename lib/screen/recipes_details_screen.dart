@@ -82,7 +82,54 @@ class _RecipesDetailsScreenState extends State<RecipesDetailsScreen> {
                          Positioned(
                         right:4,
                         top: 25,
-                          child: Image.asset('assets/icons/heart (3).png',height:30,width:30,)),
+                          child: Image.asset('assets/icons/heart (3).png',height:30,width:30,),),
+
+                          Positioned(
+                            top: 40,
+                            child:Row(
+                              children: [
+                                Container(
+                                   padding: EdgeInsets.symmetric(horizontal:10),
+                                   decoration: BoxDecoration(
+                                color: Colors.white38,
+                                borderRadius: BorderRadius.circular(8),
+                                border: Border.all(
+                                  color: Colors.blueAccent,
+                                )
+                              ),   
+                                  child: Row(
+                                  children: [
+                                    Icon(Icons.person,color: Colors.blue,),
+                                    Text(widget.revCount,style: text.textStyle18.copyWith(
+                                      fontWeight: FontWeight.bold
+                                    ),),
+                                  
+                                  ], ),
+                                ),
+                            const SizedBox(
+                              width: 15,
+                            ),    
+                                Container(
+                                  padding: EdgeInsets.symmetric(horizontal:10),
+                              decoration: BoxDecoration(
+                                color: Colors.red.shade100,
+                                borderRadius: BorderRadius.circular(8),
+                                border: Border.all(
+                                  color: Colors.red.shade200,
+                                )
+                              ),    
+                                  child: Row(
+                                  children: [
+                                    Icon(Icons.star,color: Colors.amber,),
+                                    Text(widget.rating,style: text.textStyle18.copyWith(
+                                      fontWeight: FontWeight.bold
+                                    ),),
+                                  
+                                  ], ),
+                                ),
+                                
+                              ],
+                            ) ),
                       ],
                     ),
                   ),
@@ -95,7 +142,7 @@ class _RecipesDetailsScreenState extends State<RecipesDetailsScreen> {
                           borderRadius: BorderRadius.circular(12)
                         ),
                         child: Padding(
-                       padding: const EdgeInsets.symmetric(horizontal:10,vertical: 10),   
+                       padding: const EdgeInsets.symmetric(horizontal:10,vertical:25),   
                           child: Column(
                             children: [
                               Image.asset('assets/icons/whisk.png',height: 50,),
@@ -104,7 +151,7 @@ class _RecipesDetailsScreenState extends State<RecipesDetailsScreen> {
                               ),),
                                Text('Preparation Time',style: text.textStyle18.copyWith(
                                 fontWeight: FontWeight.bold,
-                                fontFamily: 'primary'
+                                fontFamily: 'secondary'
                                 
                           
                                ),
@@ -124,7 +171,7 @@ class _RecipesDetailsScreenState extends State<RecipesDetailsScreen> {
                           borderRadius: BorderRadius.circular(12)
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal:27,vertical: 10),
+                          padding: const EdgeInsets.symmetric(horizontal:25,vertical: 25),
                           child: Column(
                             children: [
                               Image.asset('assets/icons/cooking.png',height: 50,),
@@ -133,7 +180,7 @@ class _RecipesDetailsScreenState extends State<RecipesDetailsScreen> {
                               ),),
                                Text('Cooking Time',style: text.textStyle18.copyWith(
                                 fontWeight: FontWeight.bold,
-                                fontFamily: 'primary'
+                                fontFamily: 'secondary',
                                 
                           
                                ),

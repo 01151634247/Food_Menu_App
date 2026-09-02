@@ -128,7 +128,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           return RecipesDetailsScreen(imageSrc:myRecipes[index].image.toString(),
                                           title:myRecipes[index].name.toString(), 
                                           cookTime:myRecipes[index].cookTimeMinutes.toString(),
-                                           prepTime: myRecipes[index].cookTimeMinutes.toString(),
+                                           prepTime: myRecipes[index].prepTimeMinutes.toString(),
                                             rating: myRecipes[index].rating.toString(),
                                              calories:myRecipes[index].caloriesPerServing.toString(), 
                                              revCount: myRecipes[index].reviewCount.toString(),
