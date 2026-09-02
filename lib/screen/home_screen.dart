@@ -35,6 +35,14 @@ class _HomeScreenState extends State<HomeScreen> {
         )),
         centerTitle:true,
         backgroundColor: Colors.orange.shade300,
+        leading: Padding(
+          padding: const EdgeInsets.all(10),
+          child: Image.asset('assets/icons/recipe-book.png'),
+        ),
+        actions: [
+          Icon(Icons.notifications,color:Colors.white,size: 30,),
+          SizedBox(width: 10),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 10,left:3,right: 3),
