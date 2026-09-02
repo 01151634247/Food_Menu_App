@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_menu_app/API/api.dart';
 import 'package:food_menu_app/Domain/custom_text_field.dart';
+import 'package:food_menu_app/screen/recipes_details_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -122,7 +123,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                         ),
                                         backgroundColor: Colors.orange.shade200,
                                       ),
-                                      onPressed: (){},
+                                      onPressed: (){
+                                        Navigator.push(context,MaterialPageRoute(builder: (context){
+                                          return RecipesDetailsScreen(imageSrc: '${myRecipes[index].image}');
+                                        }));
+                                      },
                                      child:Text('View',style: text.textStyle18.copyWith(
                                       fontWeight: FontWeight.bold
                                      ),),),

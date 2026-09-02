@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:food_menu_app/screen/home_screen.dart';
+import 'package:food_menu_app/screen/recipes_details_screen.dart';
 import 'package:food_menu_app/screen/splash_screen.dart';
 
 
@@ -13,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home:SplashScreen(),
+      home:HomeScreen(),
      
      
     );
