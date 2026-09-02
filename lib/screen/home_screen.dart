@@ -125,7 +125,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ),
                                       onPressed: (){
                                         Navigator.push(context,MaterialPageRoute(builder: (context){
-                                          return RecipesDetailsScreen(imageSrc:myRecipes[index].image.toString(),
+                                          return RecipesDetailsScreen(
+                                            instractionlist: myRecipes[index].instructions??[],
+                                            ingredientslist:myRecipes[index].ingredients??[],
+                                            cuisine:myRecipes[index].cuisine.toString() ,
+                                            imageSrc:myRecipes[index].image.toString(),
                                           title:myRecipes[index].name.toString(), 
                                           cookTime:myRecipes[index].cookTimeMinutes.toString(),
                                            prepTime: myRecipes[index].prepTimeMinutes.toString(),
