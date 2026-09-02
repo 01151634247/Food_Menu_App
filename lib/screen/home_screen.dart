@@ -125,7 +125,16 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ),
                                       onPressed: (){
                                         Navigator.push(context,MaterialPageRoute(builder: (context){
-                                          return RecipesDetailsScreen(imageSrc: '${myRecipes[index].image}');
+                                          return RecipesDetailsScreen(imageSrc:myRecipes[index].image.toString(),
+                                          title:myRecipes[index].name.toString(), 
+                                          cookTime:myRecipes[index].cookTimeMinutes.toString(),
+                                           prepTime: myRecipes[index].cookTimeMinutes.toString(),
+                                            rating: myRecipes[index].rating.toString(),
+                                             calories:myRecipes[index].caloriesPerServing.toString(), 
+                                             revCount: myRecipes[index].reviewCount.toString(),
+                                              foodType:  myRecipes[index].mealType.toString(), 
+                                              difficultLevel: myRecipes[index].difficulty.toString(),
+                                              );
                                         }));
                                       },
                                      child:Text('View',style: text.textStyle18.copyWith(
