@@ -69,9 +69,82 @@ class _RecipesDetailsScreenState extends State<RecipesDetailsScreen> {
               child: Column(
                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(widget.title,style:text.textStyle24.copyWith(
-                    fontWeight: FontWeight.bold,
-                  )),
+                  SizedBox(
+                    width: mediaQuery!.size.width,
+                    height: 100,
+                    child: Stack(
+                      children: [
+                        Text(widget.title,style:text.textStyle24.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                        ),
+                    
+                         Positioned(
+                        right:4,
+                        top: 25,
+                          child: Image.asset('assets/icons/heart (3).png',height:30,width:30,)),
+                      ],
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.black12,
+                          borderRadius: BorderRadius.circular(12)
+                        ),
+                        child: Padding(
+                       padding: const EdgeInsets.symmetric(horizontal:10,vertical: 10),   
+                          child: Column(
+                            children: [
+                              Image.asset('assets/icons/whisk.png',height: 50,),
+                              Text('${widget.prepTime} min',style: text.textStyle24.copyWith(
+                                fontWeight: FontWeight.bold,
+                              ),),
+                               Text('Preparation Time',style: text.textStyle18.copyWith(
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'primary'
+                                
+                          
+                               ),
+                               ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+
+
+           Container(
+                        decoration: BoxDecoration(
+                          color: Colors.black12,
+                          borderRadius: BorderRadius.circular(12)
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal:27,vertical: 10),
+                          child: Column(
+                            children: [
+                              Image.asset('assets/icons/cooking.png',height: 50,),
+                              Text('${widget.cookTime} min',style: text.textStyle24.copyWith(
+                                fontWeight: FontWeight.bold,
+                              ),),
+                               Text('Cooking Time',style: text.textStyle18.copyWith(
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'primary'
+                                
+                          
+                               ),
+                               ),
+                            ],
+                          ),
+                        ),
+                      ),
+
+                    ],
+                  )
                 ],
               ),
             ),
